@@ -1,0 +1,37 @@
+# Test Report - Fleet Music Tools
+Date: 2026-10-01
+GPU: RTX 4090 24GB, 19GB free. Good for local.
+
+## songgeneration-mcp - CAUTION, never tested, half-ready
+- Server import: OK (import ok)
+- API running: NO (10885 refused, nothing listening)
+- BACKENDS.md reality vs README: README claims ACE-Step 1.5 local MIT, BACKENDS.md + install script list Lyria / Stable Audio Open / MusicGen-small / Studio. ACE-Step NOT in install script, likely aspirational. Do not plan on ACE-Step.
+- Lyria: NO (GOOGLE_CLOUD_PROJECT empty, pay-per-use, skip)
+- Stable Audio Open 1.0: NOT cached (only stable-diffusion image models in HF hub), needs `uv add diffusers soundfile` + 2-3GB download. 47s max, instrumental only, no vocals.
+- MusicGen-small: PROVEN 2026-10-01. Generated stems/test-bed.wav (10s, 32kHz, 637KB, prompt dark folk lute 92 BPM) via isolated uv env (torch CPU + transformers + soundfile). Note: songgeneration venv itself lacks torch AND soundfile, server-local generation unproven. CPU gen slow, want CUDA torch for iteration.
+- Studio SG2: needs separate install, variable.
+- Verdict: usable for instrumental beds via MusicGen now, Stable Audio after download, no local vocal song engine proven. For Price/Lorre vocals plan on hired + RVC, not ACE.
+
+## stems-mcp - needs install
+- API running: NO (11126 refused)
+- Venv: missing (.venv False)
+- Model htdemucs.onnx: NOT in HF hub, needs ~200MB download on first use.
+- Deps: onnxruntime + gpu variant needed for 4090.
+- Verdict: install + download before mix. `uv sync` + gpu extra.
+
+## reaper-mcp - ready, Reaper found nonstandard
+- API running: NO (10797 refused, expected, Reaper not running)
+- Reaper exe: YES at C:\Program Files\REAPER (x64)\reaper.exe (18MB), not default path in README. Update OSC config to this path.
+- OSC ports 8000/8001 free (no listener, good to bind).
+- Verdict: install Reaper OSC once, then full_pipeline usable for 5-min assembly.
+
+## mixx-dj-mcp + audiotool-nexus - ready to start
+- API running: NO (11116, 10900 refused, expected down)
+- Mixxx exe: YES at C:\Program Files\Mixxx\mixxx.exe (9.6MB)
+- Verdict: start when needed for BPM/key test, no blockers.
+
+## Runup actions
+1. `just install-all` in songgeneration (expect 2-3GB downloads), test MusicGen 10s bed now.
+2. `uv sync` stems-mcp + first separate to cache htdemucs.
+3. Open Reaper x64, enable OSC 8000/8001 Send all feedback.
+4. Drop ACE-Step from BUILD promises until proven, use MusicGen + Stable Audio + hired vocals.
