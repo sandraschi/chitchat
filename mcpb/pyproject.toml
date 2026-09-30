@@ -1,0 +1,37 @@
+[project]
+name = "chitchat"
+version = "0.1.0"
+description = "Chitchat — conversation starters, archive, and fleet docs crosslink"
+requires-python = ">=3.12"
+dependencies = [
+    "fastmcp>=3.2",
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.32",
+    "httpx>=0.27",
+    "pydantic>=2.5",
+    "pydantic-settings>=2.0",
+]
+
+[project.scripts]
+chitchat = "chitchat.__main__:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-asyncio>=0.24", "ruff>=0.8"]
+
+[dependency-groups]
+dev = ["ruff>=0.15"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

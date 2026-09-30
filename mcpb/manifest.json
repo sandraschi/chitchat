@@ -1,0 +1,35 @@
+{
+  "manifest_version": "0.2",
+  "name": "chitchat",
+  "version": "0.1.0",
+  "description": "Chitchat — conversation starters, archive, and fleet docs crosslink",
+  "author": { "name": "sandraschi" },
+  "server": {
+    "type": "python",
+    "entry_point": "src/chitchat/__main__.py",
+    "mcp_config": {
+      "command": "uv",
+      "args": ["run","--directory","${PWD}","python","-m","chitchat"],
+      "env": {
+        "PYTHONPATH": "${PWD}/src",
+        "PYTHONUNBUFFERED": "1"
+      }
+    }
+  },
+  "tools": [
+    { "name": "api_health", "description": "api_health" },
+    { "name": "api_welcome", "description": "api_welcome" },
+    { "name": "api_topics", "description": "api_topics" },
+    { "name": "api_archive_list", "description": "api_archive_list" },
+    { "name": "api_archive_get", "description": "api_archive_get" },
+    { "name": "api_archive_add", "description": "api_archive_add" },
+    { "name": "api_archive_delete", "description": "api_archive_delete" },
+    { "name": "api_archive_stats", "description": "api_archive_stats" },
+    { "name": "api_docs_search", "description": "api_docs_search" },
+    { "name": "api_docs_health", "description": "api_docs_health" },
+    { "name": "chitchat_welcome", "description": "chitchat_welcome" },
+    { "name": "chitchat_topics", "description": "chitchat_topics" },
+    { "name": "chitchat_archive", "description": "chitchat_archive" },
+    { "name": "chitchat_search_docs", "description": "chitchat_search_docs" }
+  ]
+}
