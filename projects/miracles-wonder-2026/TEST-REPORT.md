@@ -7,6 +7,7 @@ GPU: RTX 4090 24GB, 19GB free. Good for local.
 - API running: NO (10885 refused, nothing listening)
 - BACKENDS.md reality vs README: README claims ACE-Step 1.5 local MIT, BACKENDS.md + install script list Lyria / Stable Audio Open / MusicGen-small / Studio. ACE-Step NOT in install script, likely aspirational. Do not plan on ACE-Step.
 - Lyria: NO (GOOGLE_CLOUD_PROJECT empty, pay-per-use, skip)
+- ACE-Step: code bridge existed but unwired; WIRED 2026-10-01 into chain (backend 2, graceful skip when :8001 down). Needs `uv run acestep-api` + model download to actually render.
 - Stable Audio Open 1.0: NOT cached (only stable-diffusion image models in HF hub), needs `uv add diffusers soundfile` + 2-3GB download. 47s max, instrumental only, no vocals.
 - MusicGen-small: PROVEN 2026-10-01. Generated stems/test-bed.wav (10s, 32kHz, 637KB, prompt dark folk lute 92 BPM) via isolated uv env (torch CPU + transformers + soundfile). Note: songgeneration venv itself lacks torch AND soundfile, server-local generation unproven. CPU gen slow, want CUDA torch for iteration.
 - Studio SG2: needs separate install, variable.
