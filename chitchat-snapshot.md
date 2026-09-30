@@ -1,0 +1,21 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - heading "Chitchat" [level=1] [ref=e5]
+    - generic [ref=e6]: v0.1.0
+    - generic [ref=e7]: 64 topics loaded
+  - navigation [ref=e8]:
+    - button "Welcome" [ref=e9] [cursor=pointer]
+    - button "Topics" [ref=e10] [cursor=pointer]
+    - button "Archive" [ref=e11] [cursor=pointer]
+    - button "Fleet Docs" [ref=e12] [cursor=pointer]
+  - main [ref=e13]:
+    - generic [ref=e14]:
+      - generic [ref=e15]:
+        - heading "Hey! Ready for a chitchat?" [level=2] [ref=e16]
+        - paragraph [ref=e17]: Browse 64 conversation starters across 8 categories, save your best chats to the archive, or search the fleet docs.
+      - generic [ref=e18]:
+        - generic [ref=e19]: 🍽️
+        - generic [ref=e20]: Food & Drink
+        - generic [ref=e21]: What's the most overrated food trend right now?
+        - button "Another one" [ref=e22] [cursor=pointer]
+  - contentinfo [ref=e23]: Chitchat v0.1.0 — Ports 10974/10975 — Fleet docs crosslink via docsops

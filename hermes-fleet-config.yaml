@@ -1,0 +1,12 @@
+terminal:
+  workspace: /mnt/d/Dev/repos
+
+mcp_servers:
+  chitchat:
+    url: "http://172.23.160.1:10974/mcp"
+    tools:
+      include: [chitchat_welcome, chitchat_topics, chitchat_search_docs]
+  docsops:
+    url: "http://172.23.160.1:10795/mcp"
+    tools:
+      include: [search_docs, get_document, ask_docs]
