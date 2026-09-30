@@ -27,3 +27,10 @@ Thumbs.db
 # on every pack. Never hand-edit, never commit.
 mcpb/src/
 
+# Backups (timestamped .bak per fleet batch-mutation rule, never commit)
+*.bak
+*.bak.*
+
+# Playwright test artifacts (regenerable browser logs/screenshots)
+.playwright-mcp/
+
