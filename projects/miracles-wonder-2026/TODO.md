@@ -1,7 +1,7 @@
 # TODO Miracles Wonder 2026
 Date: 2026-09-30
 
-- [ ] Lock lyrics v1 (stanzas 1-10 + coda hum)
+- [x] Lock lyrics v1 (stanzas 1-10 + coda hum) - done 2026-10-01
 - [ ] Original demo groove 92 BPM, test accelerando to 138
 - [ ] Voice tests: Price chorus, Lorre Kharkiv + huddle
 - [ ] SC8 animatic: drone slowmo + whirr stack

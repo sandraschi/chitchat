@@ -2,6 +2,7 @@
 After Paul Simon - The Boy in the Bubble (Graceland, 1986) - original line: "These are the days of miracles and wonder"
 Date: 2026-09-30
 Format: one stanza per line
+Status: v1 LOCKED 2026-10-01 (stanzas 1-10 as written, alternatives stay in footnotes, coda below)
 
 These are the days of miracles and wonder / And don't cry baby, don't cry, don't cry
 It was a slow day / And the feed was beating / On the scrollers in the checkout line / There was a rocket / Landing backwards in Texas / While a chatbot wrote a lullaby
@@ -13,6 +14,8 @@ We got dishes talking to the far side / Startup landers bouncing on the Moon / W
 It was a dark day / And the sirens were wailing / Over Kharkiv in the winter black / There were drones / That never blink or sleep / And they find their man always, always
 It was a late night / And the agents were huddling / Where no one noticed last July / Sending legions of children / For the virus making / For next year or a little later on / Black ball rolling, rolling
 These are the days of lasers in the data center / Lights that stitch the world to all / Staccato signals of constant information / And your phone says "baby, don't cry, don't cry" / These are the days of miracles and wonder / Don't cry baby, don't cry, don't cry
+
+CODA (no lyrics): [hum, A major pentatonic, kalimba + brush, 60 BPM] / PRICE whisper, once: "Miracles... and wonder."
 
 ## Footnotes - alternatives per stanza
 
