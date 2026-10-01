@@ -4,24 +4,25 @@ Goal: 5:00 intense, original music only, no Suno dependency.
 
 ## Fleet chain
 1. songgeneration-mcp :10885 (web 10884) - draft beds + vocal guides
-   Local ACE-Step 1.5 :8001 MIT ~2GB, Stable Audio 3 local, Lyria if GCP set, Studio :10930
-2. stems-mcp :11126 - split drafts to vocals/drums/bass/other
-3. reaper-mcp - assemble + mix + render. OSC 8000 in / 8001 out, backend 10797, frontend 10796
+   Proven: MusicGen-small (CPU, stems/test-bed.wav). Next: Stable Audio Open after ~3GB download. Studio :10930 optional.
+   Not used: ACE-Step (not in install script, unproven), Lyria (no GCP project, pay-per-use). See TEST-REPORT.md.
+   No local vocal engine proven: vocals = hired impressionists + RVC.
+2. stems-mcp :11126 - split drafts to vocals/drums/bass/other (needs uv sync + gpu extra + htdemucs download)
+3. reaper-mcp - assemble + mix + render. Reaper UDP OSC 8000 in / 8001 out (Reaper's own, not web ports), backend 10797, frontend 10796
+   Reaper exe: C:\Program Files\REAPER (x64)\reaper.exe (nonstandard path)
 4. mixx-dj-mcp :11116 (web 11117) - test BPM/key/transitions
-5. audiotool-nexus :10900 optional modular
+5. audiotool-nexus-mcp :11172 optional modular (moved off 10900, see WEBAPP_PORTS.md)
 
 ## Step 0 - backends up
 ```powershell
 # songgeneration
 cd D:\Dev\repos\songgeneration-mcp; uv sync; uv run uvicorn songgeneration_mcp.server:app --port 10885
-# ACE-Step local (separate shell)
-uv run acestep-api  # :8001
 # stems
 cd D:\Dev\repos\stems-mcp; uv sync; uv run stems-mcp --mode http  # :11126
-# reaper: open Reaper, prefs Control/OSC/web Add 127.0.0.1 listen 8000 remote 8001 Send all feedback
+# reaper: open C:\Program Files\REAPER (x64)\reaper.exe, prefs Control/OSC/web Add 127.0.0.1 listen 8000 remote 8001 Send all feedback
 ```
 
-## Step 1 - beds (Stable Audio / ACE instrumental)
+## Step 1 - beds (MusicGen-small now, Stable Audio Open after download; instrumental only)
 POST http://127.0.0.1:10885/api/v1/generate
 - folk92: {"prompt": "dark folk 92 BPM A minor, fingerpicked lute + fretless bass homage, 6/8 lilt Greensleeves-shape but original, dry, 40s", "duration": 40}
 - wonder: {"prompt": "hymnal folk lift 95 BPM Dorian, glass harmonica + choir pad, JWST awe, 40s", "duration": 40}
@@ -31,8 +32,8 @@ POST http://127.0.0.1:10885/api/v1/generate
 - ball-hits: {"prompt": "atonal staccato hits, strings clusters minor 2nds, no beat, rolling dread, 20s", "duration": 20}
 - coda60: {"prompt": "60 BPM kalimba + brush + butterflies, A major pentatonic resolve, tape hiss, 30s", "duration": 30}
 
-## Step 2 - vocals (ACE + RVC, no clone)
-- Guide via ACE-Step vocal prompts: "mature suave narrator baritone Price-style, talk-sung" for choruses, "breathy anxious tenor Lorre-style" for dark.
+## Step 2 - vocals (hired takes + RVC, no clone)
+- Direction for hired impressionists: "mature suave narrator baritone Price-style, talk-sung" for choruses, "breathy anxious tenor Lorre-style" for dark.
 - Hire clean takes, convert via RVC/Applio to style-of timbres, keep breath. Label style-of always.
 - 18+ alt: finds -> kills take for late cut.
 
@@ -50,7 +51,6 @@ POST http://127.0.0.1:11126 stems_separate separate folder with drafts. Keep voc
 Load render to mixx deck 1: POST http://127.0.0.1:11116/api/v1/deck/1/load {"track_path": "render.wav"}. Check BPM drift, key, energy curve.
 
 ## FOSS to steal
-- ACE-Step 1.5 MIT local song + LoRA
 - Stable Audio Open timing conditioning
 - MusicGen open beds
 - RVC MIT voice convert

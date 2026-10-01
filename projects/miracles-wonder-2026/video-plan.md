@@ -1,5 +1,5 @@
 # Video Plan - Days of Miracles and Wonder 2026
-Source lyrics: miracles-and-wonder-2026.md
+Source lyrics: lyrics.md
 Date: 2026-09-30
 Format: 16:9, 24fps, original music only (no Graceland melody, Content ID safe)
 Voices: PRICE (Vincent Price style, suave dread) / LORRE (Peter Lorre style, sweaty dread)
@@ -39,4 +39,4 @@ Music: original only, NO melody copy. Rhythm homage legal. Arc: start dark-folk 
 - 18+ alt: finds -> kills mix for late cut, keep main finds for YT.
 - Captions: burn one stanza per line, match lyric file.
 - Thumbnail 16:9: split Price silhouette / drone thermal / black ball.
-- Runtime target: 3:30-4:00.
+- Runtime target: 5:00 (matches BUILD.md / MELODY.md; scene durations above sum shorter, expand holds and spare strophes to fill).
