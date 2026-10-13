@@ -1,4 +1,4 @@
-﻿# Per-repo fleet start config for chitchat
+# Per-repo fleet start config for chitchat
 # Edit ports/backend target here - start.ps1 is fleet-standard.
 @{
     Name         = 'chitchat'
@@ -10,6 +10,7 @@
         Kind          = 'uvicorn'
         UvicornTarget = 'chitchat.app:app'
         SyncExtras    = @('dev')
+        SyncOnStart  = $true
         Env           = @{ WEB_PORT = '10974' }
     }
     Frontend = @{
