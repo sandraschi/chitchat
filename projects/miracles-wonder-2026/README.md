@@ -1,5 +1,5 @@
 # Miracles and Wonder 2026
-After Paul Simon Boy in the Bubble (Graceland 1986). Parody lyrics + YT video.
+After Paul Simon Boy in the Bubble (Graceland 1986). Paraphrase lyrics + YT video (homage/update, not funny parody).
 
 ## Files
 - lyrics.md - one stanza per line + footnotes, current master (copied from archive, edit here now)

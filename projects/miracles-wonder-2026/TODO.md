@@ -7,5 +7,5 @@ Date: 2026-09-30
 - [ ] SC8 animatic: drone slowmo + whirr stack
 - [ ] SC9 animatic: virion escape + huge ball Kitoh ref
 - [ ] CODA: butterflies over keyboards, Price whisper
-- [ ] YT title desc with style-of disclosure, thumbnail
+- [x] YT title desc with style-of disclosure, thumbnail v1 + captions SRT - draft 2026-10-22 (YT-PACKAGE.md, yt-thumb-1280x720.png/.figcraft, YT-CAPTIONS.srt)
 - [ ] WATCH weekly: HF tencent/SongGeneration commits + BazedFrog Studio releases + Tencent repo for v3/LeVo3
