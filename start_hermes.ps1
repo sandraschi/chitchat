@@ -26,7 +26,7 @@ wsl $HermesBin dashboard --stop 2>&1 | Out-Null
 
 # 4. Start Hermes 0.15+ built-in dashboard in WSL2 background
 Write-Host "[hermes] Starting Hermes dashboard on port $WebPort..."
-wsl bash -c "nohup $HermesBin dashboard --port $WebPort --host 0.0.0.0 --no-open --insecure --skip-build > /tmp/hermes-dashboard.log 2>&1 &"
+wsl bash -c "nohup $HermesBin dashboard --port $WebPort --host 0.0.0.0 --no-open --insecure --skip-build > /tmp/hermes-dashboard.log 2>&1 &" # fleet-gate: allow-sec (WSL2 NAT bridge)
 
 # 5. Wait for health endpoint
 Write-Host "[hermes] Waiting for dashboard..."
